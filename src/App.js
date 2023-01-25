@@ -7,10 +7,10 @@ import { getDescription, getTitle, store } from './store';
 
 function App(props) {
   // store value as selector
-  const title = useSelector((state) => state?.hello.title);
+  const titleFromSelector = useSelector((state) => state?.hello.title);
 
   // store value as props to component
-  const { description } = props;
+  const { description, title } = props;
 
   useEffect(() => {
     store.dispatch(getTitle());
@@ -21,6 +21,7 @@ function App(props) {
     <>
       <Header />
       <div style={{ padding: '50px' }}>
+        <h1>{titleFromSelector}</h1>
         <h1>{title}</h1>
         <p>{description}</p>
         <p>
