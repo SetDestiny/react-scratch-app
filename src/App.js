@@ -61,15 +61,16 @@ function App(props) {
 }
 
 App.propTypes = {
+  title: string,
   description: string,
 };
 
 App.defaultProps = {
+  title: '',
   description: '',
 };
 
 function mapStateToProps(state) {
   return { ...state.hello };
 }
-
 export default connect(mapStateToProps)(App);
